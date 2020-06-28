@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency converter</title>
+
+    <!-- css -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/body.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/calculator.css">
+
+    <!-- js -->
+
+    <script defer src="js/script.js"></script>
+
+</head>
+
+<body class="body">
+
+    <!-- header -->
+
+    <header class="header">
+        <h1>SUPEROWY KALKULATOR WALUT</h1>
+    </header>
+
+    <main>
+
+        <!-- calculator -->
+
+        <section class="calculator">
+
+            <form>
+
+                <fieldset class="calculator__set">
+                    <label>
+                        <input class="calculator__valueAmount calculator__valueAmount1" name="valueAmount1">
+                    </label>
+                    <select class="calculator__valueType calculator__valueType1" name="valueType1">
+                        <option value="PLN" selected>PLN
+                        <option value="EUR">EUR
+                        <option value="USD">USD
+                    </select>
+                </fieldset>
+
+                <button type="button" class="calculator__set calculator__button"><img width=30
+                        src="images/switchgreen.jpg" alt="change"></button>
+
+                <fieldset class="calculator__set">
+                    <label>
+                        <input class="calculator__valueAmount calculator__valueAmount2" name="valueAmount2" readonly>
+                    </label>
+                    <select class="calculator__valueType calculator__valueType2" name="valueType2">
+                        <option value="PLN">PLN
+                        <option value="EUR" selected>EUR
+                        <option value="USD">USD
+                    </select>
+                </fieldset>
+                <div class="calculator__textResult">
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
