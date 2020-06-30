@@ -10,5 +10,6 @@ html {
     font-family: 'Merriweather', serif;
     line-height: 1.8;
     font-size: 120%;
-    background-color: #eec;
+    background-image: url(../images/background2.jpg);
+    background-position: center;
 }

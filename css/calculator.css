@@ -5,7 +5,7 @@
     margin: 30px auto;
     padding: 40px 10px 20px 10px;
     text-align: center;
-    border: 8px solid hsl(34, 100%, 25%);
+    border: 8px solid hsl(34, 100%, 15%);
     border-radius: 30px;
 }
 
@@ -17,7 +17,7 @@
 .calculator__valueAmount {
     margin: 2px;
     border-radius: 8px;
-    border: 4px solid hsl(34, 43%, 57%);
+    border: 4px solid hsl(34, 43%, 37%);
     text-align: center;
     height: 50px;
     width: 300px;
@@ -27,7 +27,7 @@
 .calculator__valueType {
     margin: 2px;
     border-radius: 8px;
-    border: 4px solid hsl(34, 43%, 57%);
+    border: 4px solid hsl(34, 43%, 37%);
     text-align: center;
     height: 50px;
     width: 100px;
@@ -44,5 +44,5 @@
 .calculator__textResult {
     margin-top: 20px;
     font-size: 120%;
-    color: hsl(34, 100%, 15%);
+    color: hsl(34, 100%, 10%);
 }
