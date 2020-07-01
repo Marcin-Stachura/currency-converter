@@ -39,32 +39,31 @@
 
             <form>
 
-                <fieldset class="calculator__set">
-                    <label>
-                        <input class="calculator__valueAmount calculator__valueAmount1" name="valueAmount1">
-                    </label>
-                    <select class="calculator__valueType calculator__valueType1" name="valueType1">
-                        <option value="PLN" selected>PLN
-                        <option value="EUR">EUR
-                        <option value="USD">USD
-                    </select>
-                </fieldset>
 
-                <button type="button" class="calculator__set calculator__button"><img width=30
-                        src="images/switchgreen.jpg" alt="change"></button>
+                <label>
+                    <input class="calculator__value calculator__value--amount calculator__valueAmount1"
+                        name="valueAmount1">
+                </label>
+                <select class="calculator__value calculator__value--type calculator__valueType1" name="valueType1">
+                    <option value="PLN" selected>PLN
+                    <option value="EUR">EUR
+                    <option value="USD">USD
+                </select>
 
-                <fieldset class="calculator__set">
-                    <label>
-                        <input class="calculator__valueAmount calculator__valueAmount2" name="valueAmount2" readonly>
-                    </label>
-                    <select class="calculator__valueType calculator__valueType2" name="valueType2">
-                        <option value="PLN">PLN
-                        <option value="EUR" selected>EUR
-                        <option value="USD">USD
-                    </select>
-                </fieldset>
+                <button type="button" class="calculator__button"><img width=30 src="images/switchgreen.jpg"
+                        alt="change"></button>
+
+                <label>
+                    <input class="calculator__value calculator__value--amount calculator__valueAmount2"
+                        name="valueAmount2" readonly>
+                </label>
+                <select class="calculator__value calculator__value--type calculator__valueType2" name="valueType2">
+                    <option value="PLN">PLN
+                    <option value="EUR" selected>EUR
+                    <option value="USD">USD
+                </select>
+
                 <div class="calculator__textResult">
-
                 </div>
 
             </form>
