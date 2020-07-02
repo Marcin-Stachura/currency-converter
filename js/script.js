@@ -1,7 +1,4 @@
 {
-    console.log("Siemanko!");
-
-
     var my_image = new Image();
     my_image.src = "images/switchgreen.jpg";
     my_image.src = "images/switchyellow.jpg";
@@ -15,70 +12,74 @@
     const calcTextResult = document.querySelector(".calculator__textResult");
 
 
-    function changeTypes() {
+    const welcome = () => {
+        console.log("Siemanko!");
+    }
+
+    const changeTypes = () => {
         event.preventDefault();
-        const bufferType = valueType1Element.value;
+        const currencyType = valueType1Element.value;
         valueType1Element.value = valueType2Element.value;
-        valueType2Element.value = bufferType;
+        valueType2Element.value = currencyType;
     };
 
-    function greenCard() {
+    const displayGreenCard = () => {
         calcButton.innerHTML = `<img width=30
     src="images/switchgreen.jpg" alt="change">`;
     };
 
-    function yellowCard() {
+    const displayYellowCard = () => {
         calcButton.innerHTML = `<img width=30
         src="images/switchyellow.jpg" alt="change">`;
     };
 
 
-    function calcTextResultNone() {
+    const calcTextResultNone = () => {
         calcTextResult.innerHTML = ``;
     };
 
 
-    function calcTextResultShown() {
+    const calcTextResultShown = () => {
         calcTextResult.innerHTML = `Wymieniając <strong>${+valueAmount1Element.value} ${valueType1Element.value}</strong>,<br> otrzymasz <strong>${+valueAmount2Element.value} ${valueType2Element.value}</strong>.`;
     };
 
 
-    function calculateChange() {
+    const calculateChange = () => {
         {
-            let buffer;
+            let currency;
             const PLN = 1;
             const USD = 3.99;
             const EUR = 4.46;
             switch (valueType1Element.value) {
                 case "PLN":
-                    buffer = PLN;
+                    currency = PLN;
                     break;
                 case "EUR":
-                    buffer = EUR;
+                    currency = EUR;
                     break;
                 case "USD":
-                    buffer = USD;
+                    currency = USD;
                     break;
             }
 
             switch (valueType2Element.value) {
                 case "PLN":
-                    buffer /= PLN;
+                    currency /= PLN;
                     break;
                 case "EUR":
-                    buffer /= EUR;
+                    currency /= EUR;
                     break;
                 case "USD":
-                    buffer /= USD;
+                    currency /= USD;
                     break;
             }
-            valueAmount2Element.value = (+valueAmount1Element.value * buffer).toFixed(2);
+            valueAmount2Element.value = (+valueAmount1Element.value * currency).toFixed(2);
             calcTextResultShown();
         }
     };
 
 
-    function updateResult() {
+    const updateResult = () => {
         if ((+valueAmount1Element.value !== 0) && (valueType1Element.value === valueType2Element.value)) {
             valueAmount2Element.value = "ta sama waluta ziom";
             calcTextResultNone();
@@ -107,19 +108,24 @@
             calculateChange();
     };
 
+    const init = () => {
+        welcome();
 
-    valueAmount1Element.addEventListener("input", updateResult);
+        valueAmount1Element.addEventListener("input", updateResult);
 
-    valueType1Element.addEventListener("input", updateResult);
+        valueType1Element.addEventListener("input", updateResult);
 
-    valueType2Element.addEventListener("input", updateResult);
+        valueType2Element.addEventListener("input", updateResult);
 
-    calcButton.addEventListener("mousemove", yellowCard);
+        calcButton.addEventListener("mousemove", displayYellowCard);
 
-    calcButton.addEventListener("mouseout", greenCard);
+        calcButton.addEventListener("mouseout", displayGreenCard);
 
-    calcButton.addEventListener("click", () => {
-        changeTypes();
-        calculateChange();
-    });
+        calcButton.addEventListener("click", () => {
+            changeTypes();
+            updateResult();
+        });
+    }
+
+    init();
 }
